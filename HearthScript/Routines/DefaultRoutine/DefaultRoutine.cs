@@ -62,7 +62,7 @@ namespace HREngine.Bots
             get { return DefaultBotSettings.Instance; }
         }
         //uncomment the desired option, or leave it as is to select via the interface
-        Behavior behave = new Behavior狂野鱼人萨();
+        Behavior behave = new Behavior丨过时丨狂野鱼人萨();
         //Behavior behave = new BehaviorRush();
 
 

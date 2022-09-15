@@ -44,9 +44,9 @@ namespace HREngine.Bots
             {
                 string[] name =
                 {
-                    "Tech奥秘法", "不设惩罚", "任务海盗战", "黑眼任务术",
-                    "动物园", "口德", "咆哮德", "宇宙法", "暗牧",
-                    "标准T7猎", "狂野鱼人萨", "防战", "骑士","酸奥秘法","酸快攻德","酸鱼人萨","酸剑鱼贼"
+                    "丨过时丨Tech奥秘法", "不设惩罚", "丨过时丨任务海盗战", "丨过时丨黑眼任务术",
+                    "丨经典丨动物园", "丨过时丨口德", "丨经典丨咆哮德", "丨过时丨宇宙法", "丨过时丨暗牧",
+                    "丨过时丨标准T7猎", "丨过时丨狂野鱼人萨", "丨经典丨防战", "丨过时丨骑士","丨狂野丨酸奥秘法","丨未完成丨酸快攻德","丨通用丨酸鱼人萨","丨狂野丨酸剑鱼贼"
                 };
                 DefaultBehavior = name[int.Parse(CommandLine.Arguments.Single("behavior"))];
                 Log.ErrorFormat("[中控设置] 天梯对战策略 = {0}.", DefaultBehavior);
@@ -189,7 +189,7 @@ namespace HREngine.Bots
                 /*
                 Log.InfoFormat("#############################################", _defaultBehavior);                
                 Log.InfoFormat("#############################################", _defaultBehavior);                
-                Log.InfoFormat(@"运行过程中发现伏笔，请在  https://gitee.com/notnow/hearthstoneRoutine/issues/new?issue%5Bassignee_id%5D=0&issue%5Bmilestone_id%5D=0 提交 issue，标题设置为你认为合理的打法，内容从 Routines\DefaultRoutine\Silverfish\Test\Data\对局记录 目录下的相应 txt 文本文档中直接全文复制即可。本策略为{0}免费分享，仅供学习交流使用，严禁贩卖。主程序并非我所修复，主程序问题请不要问我。", "李文浩个人自用策略");
+                Log.InfoFormat(@"酸小明牛通");
                 Log.InfoFormat("#############################################", _defaultBehavior);                
                 Log.InfoFormat("#############################################", _defaultBehavior);                */
                 Log.InfoFormat("[默认策略设置] 天梯对战策略 = {0}.", _defaultBehavior);                

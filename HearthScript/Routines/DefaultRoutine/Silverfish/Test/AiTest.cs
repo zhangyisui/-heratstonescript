@@ -18,7 +18,7 @@ namespace HREngine.Bots
             InitSetting();
 
             Ai ai = Ai.Instance;
-            ai.botBase = new Behavior狂野鱼人萨();  //根据卡组选择合适的策略
+            ai.botBase = new Behavior不设惩罚();  //根据卡组选择合适的策略
 
             ai.autoTester(true, data, 0);// 0：全做 1:只斩杀 2：正常
             Console.WriteLine("测试完毕，请去Logg.txt文件末尾查看Ai操作");

@@ -22,7 +22,7 @@ namespace HREngine.Bots
             if (ai == null)
             {
                 ai = Ai.Instance;
-                ai.botBase = new Behavior酸奥秘法();  //根据卡组选择合适的策略
+                ai.botBase = new Behavior不设惩罚();  //根据卡组选择合适的策略
 
             }
             ai.autoTester(true, data, 0);// 0：全做 1:只斩杀 2：正常
