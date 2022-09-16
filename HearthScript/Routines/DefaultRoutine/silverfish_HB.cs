@@ -147,9 +147,9 @@ namespace HREngine.Bots
                     + BehaviorPath.Count + ". 这些值应该相同. 或许你有其他文件在  'custom_behavior' 文件夹.");
             }
 
-            if (BehaviorDB.ContainsKey("狂野鱼人萨"))
+            if (BehaviorDB.ContainsKey("丨通用丨不设惩罚"))
             {//必须
-                Ai.Instance.botBase = BehaviorDB["狂野鱼人萨"];
+                Ai.Instance.botBase = BehaviorDB["丨通用丨不设惩罚"];
                 return true;
             }
             else

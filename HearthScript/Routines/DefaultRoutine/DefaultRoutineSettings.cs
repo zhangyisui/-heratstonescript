@@ -44,9 +44,16 @@ namespace HREngine.Bots
             {
                 string[] name =
                 {
-                    "丨过时丨Tech奥秘法", "不设惩罚", "丨过时丨任务海盗战", "丨过时丨黑眼任务术",
-                    "丨经典丨动物园", "丨过时丨口德", "丨经典丨咆哮德", "丨过时丨宇宙法", "丨过时丨暗牧",
-                    "丨过时丨标准T7猎", "丨过时丨狂野鱼人萨", "丨经典丨防战", "丨过时丨骑士","丨狂野丨酸奥秘法","丨未完成丨酸快攻德","丨通用丨酸鱼人萨","丨狂野丨酸剑鱼贼"
+                    "丨通用丨不设惩罚",
+                    "丨经典丨防战",
+                    "丨经典丨动物园",
+                    "丨经典丨咆哮德",
+                    "丨狂野丨酸奥秘法",
+                    "丨狂野丨酸剑鱼贼",
+                    "丨通用丨酸鱼人萨",
+                    "丨未完丨酸快攻德",
+                    "丨过时丨暗牧",
+                    "丨过时丨任务海盗战",
                 };
                 DefaultBehavior = name[int.Parse(CommandLine.Arguments.Single("behavior"))];
                 Log.ErrorFormat("[中控设置] 天梯对战策略 = {0}.", DefaultBehavior);
@@ -175,7 +182,7 @@ namespace HREngine.Bots
         }
 
         // Behavior choice.
-        [DefaultValue("防战")]
+        [DefaultValue("丨经典丨防战")]
         public string DefaultBehavior
         {
             get { return _defaultBehavior; }
