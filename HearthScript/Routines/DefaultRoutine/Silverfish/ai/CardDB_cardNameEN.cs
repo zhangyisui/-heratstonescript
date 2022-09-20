@@ -83348,6 +83348,23 @@ namespace HREngine.Bots
             /// <para>在你的英雄攻击后，抽一张海盗牌。</para>
             /// </summary>
             cutlasscourier,
+            /// <summary>
+            /// <para>异议</para>
+            /// <seealso cref="cardIDEnum.MAW_006"/><br/>
+            /// <see cref="Sim_MAW_006"/><br/>
+            /// <para>法术 法师 费用：3 攻击力：0 生命值：0</para>
+            /// <para>当你的对手使用一张随从牌时，反制该随从。</para>
+            /// </summary>
+            objection,
+            /// <summary>
+            /// <para>契约咒术师</para>
+            /// <seealso cref="cardIDEnum.MAW_101"/><br/>
+            /// <see cref="Sim_MAW_101"/><br/>
+            /// <para>随从 法师 费用：6 攻击力：6 生命值：6</para>
+            /// <para>你每控制一个奥秘，本牌的法力值消耗便减少（3）点。</para>
+            /// </summary>
+            contractconjurer,
+
         }
     }
 }

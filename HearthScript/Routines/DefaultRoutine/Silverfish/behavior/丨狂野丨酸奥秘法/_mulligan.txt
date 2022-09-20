@@ -3,10 +3,13 @@
 REV_018;mage;None;Discard:2;/
 //暗金教侍从
 CFM_066;mage;None;Hold:1;/
-CFM_066;mage;None;Hold:2;/BT_003/ULD_239/LOOT_101/UNG_020/DMF_107/CORE_LOOT_101/
+CFM_066;mage;None;Hold:2;/BT_003/ULD_239/LOOT_101/UNG_020/DMF_107/CORE_LOOT_101/MAW_006/
 //匿名线人
 REV_841;mage;None;Hold:1;/
-REV_841;mage;None;Hold:2;/BT_003/ULD_239/LOOT_101/UNG_020/DMF_107/CORE_LOOT_101/
+REV_841;mage;None;Hold:2;/BT_003/ULD_239/LOOT_101/UNG_020/DMF_107/CORE_LOOT_101/MAW_006/
+//异议
+MAW_006;mage;None;Discard:2;/
+MAW_006;mage;None;Hold:1;CFM_066/EX1_612/REV_841/
 //变形术野猪
 AT_005;mage;None;Discard:2;/
 //镜像实体
@@ -14,7 +17,7 @@ EX1_294;mage;None;Discard:2;/
 EX1_294;mage;None;Hold:1;CFM_066/EX1_612/REV_841/
 //肯瑞托法师
 EX1_612;mage;None;Discard:2;/
-EX1_612;mage;None;Hold:1;/BT_003/ULD_239/LOOT_101/UNG_020/DMF_107/
+EX1_612;mage;None;Hold:1;/BT_003/ULD_239/LOOT_101/UNG_020/DMF_107/MAW_006/
 //法术反制
 EX1_287;mage;None;Discard:2;/
 CORE_EX1_287;mage;None;Discard:2;/

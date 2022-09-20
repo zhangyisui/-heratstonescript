@@ -161,7 +161,7 @@ namespace HREngine.Bots
                             maxTiredDmg = i;
                         }
                         if (enemyHeroHP <= 12 && ownHeroHP - tiredDmg1 > 0 && p.ownMaxMana >= 10) // 敌方HP不高于12，我方下回合不会疲劳死，法力值大于等于10点，则抽牌GTMD
-                            return -20;
+                            return -20; 
                         if (enemyHeroHP <= 6 && ownHeroHP - tiredDmg1 + maxTiredDmg > 0 && p.ownMaxMana >= 10) // 敌方HP不高于6，我方当前回合不会疲劳死，法力值大于等于10点，则抽牌GTMD
                             return -20;
                         else return 20;
@@ -247,6 +247,11 @@ namespace HREngine.Bots
                     //if (card.cost == 2) return -12;
                     //if (card.cost == 0) return -50;  // Todo: 这个写法不对，需要用hc.manacost，需要更改整个传参，否则稳定return 10
                     return 0;
+                case CardDB.cardNameEN.contractconjurer://契约咒术师
+                    //if (card.cost == 6) return 10;
+                    //if (card.cost == 3) return -12;
+                    //if (card.cost == 0) return -50;  // Todo: 这个写法不对，需要用hc.manacost，需要更改整个传参，否则稳定return 10
+                    return 0;
                 //非公平游戏
                 case CardDB.cardNameEN.riggedfairegame:
                     pen = 0;
@@ -299,6 +304,14 @@ namespace HREngine.Bots
                         pen -= 30 + (12 - p.ownHero.Hp) * (12 - p.ownHero.Hp);
                     if (needSecret)
                         pen -= 4;   //优先级低于其他奥秘
+                    return pen;
+
+                case CardDB.cardNameEN.objection://异议
+                    pen = -5;
+                    if (p.nextSecretThisTurnCost0)
+                        pen -= 8;
+                    if (needSecret)
+                        pen -= 9;
                     return pen;
 
                 case CardDB.cardNameEN.explosiverunes://爆炸符文
