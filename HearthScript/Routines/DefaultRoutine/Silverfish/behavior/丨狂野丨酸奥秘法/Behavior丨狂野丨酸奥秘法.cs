@@ -65,8 +65,8 @@ namespace HREngine.Bots
 
                 //匿名线人（223 奥秘0费）
                 case CardDB.cardNameEN.anonymousinformant:
-                    if (!hasSecretHand && p.ownMaxMana <= 8) return 0;//没有奥秘也可以下
                     if (zeroSecret && hasSecretHand) return 500;//有0费奥秘不要下
+                    if (!hasSecretHand && p.ownMaxMana <= 8) return 0;//没有奥秘也可以下
                     return -7;//有奥秘
 
                 //模糊的陌生人（223 奥秘0费）

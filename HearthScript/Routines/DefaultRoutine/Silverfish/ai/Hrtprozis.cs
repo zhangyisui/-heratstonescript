@@ -100,6 +100,7 @@ namespace HREngine.Bots
         public bool ownMinionsInDeckCost0 = false;//我方牌库中是否有0费随从
         public int anzOwnElementalsThisTurn = 0;//在此回合中使用元素牌
         public int anzOwnElementalsLastTurn = 0;//上一回合使用元素牌
+        public int useNature = 0;//是否有自然使徒在手上的时候使用过自然法术
         public int ownElementalsHaveLifesteal = 0;//我方元素牌具有吸血
         private int ownPlayerController = 0;//我方玩家控制？
         public bool LothraxionsPower = false;//使白银之手新兵获得圣盾
@@ -246,6 +247,8 @@ namespace HREngine.Bots
             anzOwnElementalsLastTurn = anzOwnElemLT;
             ownElementalsHaveLifesteal = ownElementalsHaveLS;
         }
+
+
         //英雄ID转到名称
         public string heroIDtoName(string s)
         {

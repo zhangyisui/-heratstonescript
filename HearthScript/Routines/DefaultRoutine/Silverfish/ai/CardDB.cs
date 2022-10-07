@@ -289,6 +289,7 @@ namespace HREngine.Bots
             REQ_HAND_NOT_FULL = 70,
             REQ_DRAG_TO_PLAY = 71,
             REQ_TARGET_TO_PLAY2 = 75,
+            REQ_TARGET_NO_NATURE = 77,
         }
 
         public class Card
@@ -362,6 +363,7 @@ namespace HREngine.Bots
             public bool Charge = false;//冲锋
             public bool Rush = false;//突袭
             public bool Secret = false;//奥秘
+            public bool Nature = false;//自然
             public bool Quest = false;//任务
             public bool Questline = false;//任务线
             public bool Morph = false;//变形
@@ -461,6 +463,7 @@ namespace HREngine.Bots
                 bool REQ_TARGET_IF_AVAILABLE = false;
                 bool REQ_STEALTHED_TARGET = false;
                 bool REQ_TARGET_IF_AVAILABE_AND_ELEMENTAL_PLAYED_LAST_TURN = false;
+                bool REQ_TARGET_NO_NATURE = false;
 
                 foreach (PlayReq pr in this.sim_card.GetPlayReqs())
                 {
@@ -586,6 +589,10 @@ namespace HREngine.Bots
                         case ErrorType2.REQ_TARGET_WITH_DEATHRATTLE:
                             REQ_TARGET_WITH_DEATHRATTLE = true;
                             targetOnlyMinion = true;
+                            extraParam = true;
+                            continue;
+                        case ErrorType2.REQ_TARGET_NO_NATURE:
+                            REQ_TARGET_NO_NATURE = true;
                             extraParam = true;
                             continue;
                         case ErrorType2.REQ_TARGET_IF_AVAILABE_AND_ELEMENTAL_PLAYED_LAST_TURN:
@@ -776,9 +783,27 @@ namespace HREngine.Bots
                         targetOwnHero = false;
                         targetEnemyHero = false;
                     }
+                    if (REQ_TARGET_NO_NATURE)
+                    {
+                        if (p.useNature < 1)
+                        {
+                            foreach (Minion m in targets) m.extraParam = true;
+                            targetOwnHero = false;
+                            targetEnemyHero = false;
+                        }
+                    }
                     if (REQ_TARGET_IF_AVAILABE_AND_ELEMENTAL_PLAYED_LAST_TURN)
                     {
                         if (p.anzOwnElementalsLastTurn < 1)
+                        {
+                            foreach (Minion m in targets) m.extraParam = true;
+                            targetOwnHero = false;
+                            targetEnemyHero = false;
+                        }
+                    }
+                    if (REQ_TARGET_NO_NATURE)
+                    {
+                        if (p.useNature < 1)
                         {
                             foreach (Minion m in targets) m.extraParam = true;
                             targetOwnHero = false;
@@ -1633,6 +1658,11 @@ namespace HREngine.Bots
 
                     switch (tag.GetAttribute("enumID"))
                     {
+                        case "643":
+                            {
+                                card.Nature = true;
+                            }
+                            break;
                         case "321":
                             {
                                 card.Collectable = true;

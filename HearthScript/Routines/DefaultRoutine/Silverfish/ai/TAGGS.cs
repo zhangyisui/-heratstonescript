@@ -90,6 +90,7 @@ namespace HREngine.Bots
         DEATHRATTLE = 217,
         BATTLECRY = 218,
         SECRET = 219,
+        NATURE = 643,
         COMBO = 220,
         CANT_HEAL = 221,
         CANT_DAMAGE = 222,

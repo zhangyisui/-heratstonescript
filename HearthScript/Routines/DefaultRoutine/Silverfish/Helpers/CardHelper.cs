@@ -80,6 +80,7 @@ namespace HREngine.Bots
                 case CardDB.cardIDEnum.CS2_017_HS4:
                 case CardDB.cardIDEnum.HERO_06ebp:
                 case CardDB.cardIDEnum.HERO_06fbp:
+                case CardDB.cardIDEnum.HERO_06zbp:
                     tempCardIdEnum = CardDB.cardIDEnum.HERO_06bp;
                     break;
                 // 术士皮肤

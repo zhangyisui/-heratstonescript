@@ -423,14 +423,18 @@ namespace HREngine.Bots
 			/// <para>随从 中立 费用：2 攻击力：4 生命值：4</para>
 			/// </summary>
 			nerubian,
-			/// <summary>
-			/// <para>活体根须</para>
-			/// <seealso cref="cardIDEnum.AT_037" /><br/>
-			/// <see cref="Sim_AT_037" /><br/>
-			/// <para>法术 德鲁伊 费用：1</para>
-			/// <para><b>抉择：</b>造成$2点伤害；或者召唤两个1/1的树苗。</para>
-			/// </summary>
-			livingroots,
+            /// <summary>
+            /// <para>活体根须</para>
+            /// <seealso cref="cardIDEnum.AT_037" /><br/>
+            /// <see cref="Sim_AT_037" /><br/>
+            /// <para>法术 德鲁伊 费用：1</para>
+            /// <para><b>抉择：</b>造成$2点伤害；或者召唤两个1/1的树苗。</para>
+            /// <seealso cref="cardIDEnum.CORE_AT_037" /><br/>
+            /// <see cref="Sim_CORE_AT_037" /><br/>
+            /// <para>法术 德鲁伊 费用：1</para>
+            /// <para><b>抉择：</b>造成$2点伤害；或者召唤两个1/1的树苗。</para>
+            /// </summary>
+            livingroots,
 			/// <summary>
 			/// <para>缠人根须</para>
 			/// <seealso cref="cardIDEnum.AT_037a" /><br/>
@@ -22911,14 +22915,16 @@ namespace HREngine.Bots
 			/// <para>召唤五个2/2的树人。</para>
 			/// </summary>
 			theforestsaid,
-			/// <summary>
-			/// <para>树人</para>
-			/// <seealso cref="cardIDEnum.VAN_EX1_tk9b" /><br/>
-			/// <see cref="Sim_VAN_EX1_tk9b" /><br/>
-			/// <para>随从 德鲁伊 费用：1 攻击力：2 生命值：2</para>
-			/// <para><b>冲锋</b>，在回合结束时，消灭该随从。</para>
-			/// </summary>
-			treant,
+            /// <summary>
+            /// <para>树人</para>
+            /// <seealso cref="cardIDEnum.VAN_EX1_tk9b" /><br/>
+            /// <see cref="Sim_VAN_EX1_tk9b" /><br/>
+            /// <seealso cref="cardIDEnum.REV_336t2"/><br/>
+            /// <see cref="Sim_REV_336t2"/><br/>
+            /// <para>随从 德鲁伊 费用：1 攻击力：2 生命值：2</para>
+            /// <para><b>冲锋</b>，在回合结束时，消灭该随从。</para>
+            /// </summary>
+            treant,
 			/// <summary>
 			/// <para>水晶之力</para>
 			/// <seealso cref="cardIDEnum.DAL_350" /><br/>
@@ -76676,14 +76682,16 @@ namespace HREngine.Bots
 			/// <para><b>战吼：</b>造成5点伤害。</para>
 			/// </summary>
 			pitcrocolisk,
-			/// <summary>
-			/// <para>欢快的同伴</para>
-			/// <seealso cref="cardIDEnum.ULD_191" /><br/>
-			/// <see cref="Sim_ULD_191" /><br/>
-			/// <para>随从 中立 费用：1 攻击力：1 生命值：2</para>
-			/// <para><b>战吼：</b>使一个友方随从获得+2生命值。</para>
-			/// </summary>
-			beamingsidekick,
+            /// <summary>
+            /// <para>欢快的同伴</para>
+            /// <seealso cref="cardIDEnum.ULD_191" /><br/>
+            /// <see cref="Sim_ULD_191" /><br/>
+            /// <seealso cref="cardIDEnum.CORE_ULD_191" /><br/>
+            /// <see cref="Sim_CORE_ULD_191" /><br/>
+            /// <para>随从 中立 费用：1 攻击力：1 生命值：2</para>
+            /// <para><b>战吼：</b>使一个友方随从获得+2生命值。</para>
+            /// </summary>
+            beamingsidekick,
 			/// <summary>
 			/// <para>获得援助</para>
 			/// <seealso cref="cardIDEnum.ULD_191e" /><br/>
@@ -83364,6 +83372,46 @@ namespace HREngine.Bots
             /// <para>你每控制一个奥秘，本牌的法力值消耗便减少（3）点。</para>
             /// </summary>
             contractconjurer,
+            /// <summary>
+            /// <para>安插证据</para>
+            /// <seealso cref="cardIDEnum.REV_313"/><br/>
+            /// <see cref="Sim_REV_313"/><br/>
+            /// <para>法术 德鲁伊 费用：1 攻击力：0 生命值：0</para>
+            /// <para>发现一张法术牌。在本回合中，其法力值消耗减少（2）点。</para>
+            /// </summary>
+            plantedevidence,
+            /// <summary>
+            /// <para>水栖形态</para>
+            /// <seealso cref="cardIDEnum.TSC_654"/><br/>
+            /// <see cref="Sim_TSC_654"/><br/>
+            /// <para>法术 德鲁伊 费用：1 攻击力：0 生命值：0</para>
+            /// <para>探底。如果你在本回合中有足够的法力值使用选中的牌，则抽取这张牌。</para>
+            /// </summary>
+            aquaticform,
+            /// <summary>
+            /// <para>邪恶的厨师</para>
+            /// <seealso cref="cardIDEnum.REV_016"/><br/>
+            /// <see cref="Sim_REV_016"/><br/>
+            /// <para>随从 中立 费用：2 攻击力：1 生命值：4</para>
+            /// <para>在你的回合结束时，如果你已对敌方英雄造成3点或更多伤害，抽一张牌。</para>
+            /// </summary>
+            crookedcook,
+            /// <summary>
+            /// <para>自然使徒</para>
+            /// <seealso cref="cardIDEnum.TID_002"/><br/>
+            /// <see cref="Sim_TID_002"/><br/>
+            /// <para>随从 德鲁伊 费用：3 攻击力：3 生命值：3</para>
+            /// <para>如果你在此牌在你手中时施放过自然法术，使你的其他随从获得+1/+2。</para>
+            /// </summary>
+            heraldofnature,
+            /// <summary>
+            /// <para>自然死亡</para>
+            /// <seealso cref="cardIDEnum.REV_307"/><br/>
+            /// <see cref="Sim_REV_307"/><br/>
+            /// <para>法术 德鲁伊 费用：2 攻击力：0 生命值：0</para>
+            /// <para>造成2点伤害。召唤一个2/2的树人。</para>
+            /// </summary>
+            naturalcauses,
 
         }
     }

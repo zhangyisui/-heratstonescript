@@ -178,7 +178,8 @@ namespace HREngine.Bots
         public int anzOwnJadeGolem = 0;
         public int anzEnemyJadeGolem = 0;
         public int anzOwnElementalsThisTurn = 0;
-        public int anzOwnElementalsLastTurn = 0;
+        public int anzOwnElementalsLastTurn = 0;  //上回合使用过元素
+        public int useNature = 0;                  //特定牌在手中时触发是否使用过自然法术
 
         public int blackwaterpirate = 0;
         public int blackwaterpirateStarted = 0;
@@ -448,6 +449,7 @@ namespace HREngine.Bots
             this.OwnLastDiedMinion = prozis.OwnLastDiedMinion;
             this.anzOwnElementalsThisTurn = prozis.anzOwnElementalsThisTurn;
             this.anzOwnElementalsLastTurn = prozis.anzOwnElementalsLastTurn;
+            this.useNature = prozis.useNature;
 
             this.attackFaceHP = prozis.attackFaceHp;
 
@@ -3290,7 +3292,7 @@ namespace HREngine.Bots
             this.doDmgTriggers();
         }
 
-        public void endTurn()
+        public void endTurn()           //回合结束时
         {
             if (this.turnCounter == 0) this.manaTurnEnd = this.mana;
             this.turnCounter++;
@@ -3303,8 +3305,8 @@ namespace HREngine.Bots
                 this.evaluatePenality += ComboBreaker.Instance.checkIfComboWasPlayed(this);
                 if (this.complete) return;
                 
-                this.anzOwnElementalsLastTurn = this.anzOwnElementalsThisTurn;
-                this.anzOwnElementalsThisTurn = 0;
+                this.anzOwnElementalsLastTurn = this.anzOwnElementalsThisTurn;      //令上回合使用元素等于本回合使用元素
+                this.anzOwnElementalsThisTurn = 0;                                  //令本回合使用元素为0
             }
             else
             {
@@ -4276,16 +4278,57 @@ namespace HREngine.Bots
             this.triggerCardsChanged(true);
 
             //elm.handcard.card.type == CardDB.type.旱地风暴 || elm.handcard.card.nameCN == CardDB.cardNameCN.破霰元素 || elm.handcard.card.nameCN == CardDB.cardNameCN.花岗岩熔铸体 || elm.handcard.card.nameCN == CardDB.cardNameCN.哀嚎蒸汽 || elm.handcard.card.nameCN == CardDB.cardNameCN.火光元素 || elm.handcard.card.nameCN == CardDB.cardNameCN.冰雪亡魂 || elm.handcard.card.nameCN == CardDB.cardNameCN.笼斗管理员)
-            
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
             foreach (Minion elm in this.ownMinions)
             {
                 if ((TAG_RACE)elm.handcard.card.race == TAG_RACE.ELEMENTAL)
                 {
-                    this.anzOwnElementalsThisTurn = 1;
-                    this.anzOwnElementalsLastTurn = this.anzOwnElementalsThisTurn;
+                    this.anzOwnElementalsThisTurn = 1;                                                      //本回合使用元素
+                    this.anzOwnElementalsLastTurn = this.anzOwnElementalsThisTurn;  
+                    break;
+                }
+                //if (hc.card.SpellSchool == CardDB.SpellSchool.NATURE)
+                //{
+
+
+                //    //Handmanager.Handcard hc = CardDB.cardNameCN.自然使徒;
+                //    //if (hc != null)
+                //    //{
+                //    //    hc.addattack++;
+                //    //    hc.addHp++;
+                //    //    p.anzOwnExtraAngrHp += 2;
+                //    //}
+
+
+                //    //if (elm.handcard.card.nameCN == CardDB.cardNameCN.自然使徒)
+                //    //{
+                //    if(this.useNature == -1) this.useNature = 1;                                                    //使用过自然
+                //    break;
+                //    //}
+                //}
+            }
+            if (c.SpellSchool == CardDB.SpellSchool.NATURE)     //使用自然法术时遍历手牌，有自然使徒时
+            {
+                foreach (Handmanager.Handcard ohc in this.owncards)
+                {
+                    if (ohc.card.nameCN == CardDB.cardNameCN.自然使徒)
+                    {
+                        this.useNature = 1;
+                        prozis.useNature = 1;
+                    }
+                    else
+                    {
+                        this.useNature = 0;
+                        prozis.useNature = 0;
+                    }
                     break;
                 }
             }
+
             this.anzOwnElementalsThisTurn = 0;
             //Helpfunctions.Instance.logg("play crd anzOwnElementalsLastTurn" + Convert.ToString(this.ownMinions.Count) + " " + Convert.ToString(this.anzOwnElementalsLastTurn));
 
@@ -4293,8 +4336,10 @@ namespace HREngine.Bots
             {
                 this.playedPreparation = false;//伺机待发标志位清除
                 this.spellsplayedSinceRecalc++;
+                //useNature = 1;
 
-                if(this.ownWeapon != null && this.ownWeapon.Durability > 0 && this.ownWeapon.card.nameCN == CardDB.cardNameCN.暗影布缝针 && c.SpellSchool == CardDB.SpellSchool.SHADOW)
+
+                if (this.ownWeapon != null && this.ownWeapon.Durability > 0 && this.ownWeapon.card.nameCN == CardDB.cardNameCN.暗影布缝针 && c.SpellSchool == CardDB.SpellSchool.SHADOW)
                 {
                     this.allCharsOfASideGetDamage(false, 1);
                     this.evaluatePenality -= (this.enemyMinions.Count + 1) * 4;
