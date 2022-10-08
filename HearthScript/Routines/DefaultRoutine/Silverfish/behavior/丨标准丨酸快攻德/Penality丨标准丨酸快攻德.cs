@@ -23,6 +23,8 @@ namespace HREngine.Bots
                 //伤害类
                 case CardDB.cardNameCN.瞄准射击:
                 case CardDB.cardNameCN.快速射击:
+                case CardDB.cardNameCN.自然死亡:
+                case CardDB.cardNameCN.缠人根须:
                     if (target != null && target.own) return 1000;
                     break;
             }

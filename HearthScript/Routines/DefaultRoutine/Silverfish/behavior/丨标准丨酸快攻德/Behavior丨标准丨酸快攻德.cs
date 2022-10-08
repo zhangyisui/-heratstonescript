@@ -150,7 +150,7 @@ namespace HREngine.Bots
                 case CardDB.cardNameCN.自然使徒:
                     if (p.useNature != 1) return 500;
                     //return -500;
-                    pen -= bonus_mine * 7 * (p.ownMinions.Count - 2);
+                    pen -= bonus_mine * 7 * (p.ownMinions.Count - 1);
                     //pen -= bonus_mine * 4 * (p.ownMinions.Count - 2);
                     break;
                 case CardDB.cardNameCN.肥料滋养:
@@ -239,6 +239,7 @@ namespace HREngine.Bots
                         retval -= i * 7 - 7;
                         break;
                     case CardDB.cardNameCN.荆棘护卫:
+                    case CardDB.cardNameCN.邪恶的厨师:
                     case CardDB.cardNameCN.凶恶的滑矛纳迦:
                     case CardDB.cardNameCN.暗礁德鲁伊:
                     case CardDB.cardNameCN.活体根须:

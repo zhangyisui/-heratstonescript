@@ -22,10 +22,12 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0" Content="天梯对战策略:"  Margin="3,5,3,1" ToolTipService.ToolTip="天梯对战策略."/>
                     <ComboBox x:Name="defaultBehaviorComboBox1" Grid.Row="0" Grid.Column="1" Margin="3" IsEditable="False" />
+                    <Label Grid.Row="0" Grid.Column="2" Content="卡组代码->鼠标滚轮往下翻"  Margin="3,5,3,1" ToolTipService.ToolTip="卡组代码鼠标滚轮往下翻."/>
 
                     <Button Content="打开最近对战记录文件夹" Name="lastMatch" Grid.Row="1" Grid.Column="0" Margin="3"/>
                     <Button Content="删除所有日志" Name="clearLogButton" Grid.Row="1" Grid.Column="1" Margin="3"/>
@@ -67,7 +69,7 @@
 					Text="声明： 使用炉石兄弟辅助进行游戏的行为违反了暴雪用户协议 1.C.ii.2 使用机器人程序软件（BOT）： 任何未经暴雪和/或运营方明确授权，允许自动控制游戏，服务器和/或任何组件或其功能的的代码或/和软件，如自动操控游戏中的角色；因此根据协议，暴雪和/或运营方可以暂停、撤销或终止您使用本平台或本平台的部分功能或组成部分的许可。 &#13;&#10;简单来说使用炉石兄弟操控角色出牌的行为违反了暴雪用户条例，因此会被封号。&#13;&#10;策略的开源分享仅供学习交流使用，请勿主动向外传播。&#13;&#10;分享策略是为了收集伏笔数据，优化策略以满足个人兴趣爱好，我承诺没有在任何场合贩卖炉石兄弟主程序或者策略，并且已经在捐赠声明了捐赠不会获得额外的任何服务，所有提供的资源都是免费的。之后会删除之前分享的主程序并不再主动进行主程序的分享。如果该策略的开源分享行为损害了暴雪/运营方的利益，请联系我停止更新/删库，我会全力配合。 " MaxWidth="600" TextWrapping="Wrap"/>
 
                     <TextBox Name="Description" Width="600"  Grid.Row="0" Grid.Column="0"  Margin="3,5,3,1" Height="Auto" 
-					Text="AI值相关说明和卡组代码请滑动到下面的文本框中查看 &#13;&#10; 本策略完全免费！如果你是花钱购买的，说明你被坑了！！&#13;&#10;本策略基于李文浩大佬，由酸小明修改，随缘更新。&#13;&#10;卡组代码在下面的文本框里 &#13;&#10;" MaxWidth="600" TextWrapping="Wrap"/>
+					Text="AI值相关说明和卡组代码请滑动到下面的文本框中查看 &#13;&#10;本策略完全免费！如果你是花钱购买的，说明你被坑了！！&#13;&#10;本策略基于李文浩大佬，由酸小明修改，随缘更新。&#13;&#10;卡组代码在下面的文本框里 &#13;&#10;" MaxWidth="600" TextWrapping="Wrap"/>
 
                     <TextBox Name="deckCode" Width="600"  Grid.Row="1" Grid.Column="0"  Margin="3,5,3,1" Height="Auto" 
                     Text="参考卡组代码：&#13;&#10;没有的自己网上找吧~&#13;&#10;快攻德：&#13;&#10;AAECAbSKAwAPrewDs+wD7PUD9PYDrIAEsIAEh58E4aQEiLIErsAEqM4EgdQEntQE1t4E3e0EAA==&#13;&#10;&#13;&#10;剑鱼贼：&#13;&#10;AAEBAYO6Agb6DpG8AvfUA/PdA4qwBPTdBAyoBdQF7gb7D+XRAumwA7q2A6rLA4rJBP3TBJjbBJrbBAA=&#13;&#10;&#13;&#10;鱼人萨：&#13;&#10;AAECAc2+BQSo7gPblASX1ATy3QQNk+gDlOgDs+gD3ewDlfADtZ8EoqAEq6AE1bIEssEEws4Exc4E7tMEAA==&#13;&#10;&#13;&#10;奥秘法：&#13;&#10;30牌奥秘法：&#13;&#10;AAEBAbLaBQKV4QO95AQOcde2Auu6Aoe9Ao/TAr6kA92pA/SrA5DhA5HhA8agBJLfBKPkBP7sBAA=&#13;&#10;40牌奥秘法：&#13;&#10;AAEBAcu+BQzAAfoOotMCvqQDv6QD9KsDwrgDleED/Z4EveQErOUEl+8EDuwF9w3XtgLrugKHvQLdqQOQ4QOR4QPnnwTGoASS3wSj5AT+7ATboQUA&#13;&#10;&#13;&#10;经典动物园：&#13;&#10;AAEDAf0GAA/7lQTVlgTrlgTtlgSBoQSuoQSyoQS9oQTDoQTToQTuoQSdogSjogTUogTDowQA&#13;&#10;&#13;&#10;经典防战：&#13;&#10;AAEDAce+BQivlgS3oQTWoQTboQSKogSYogTGogTZogQLl5YEmJYEmpYE85YE/5YEsaEEuaIEvqIEwKIEw6IEnaMEAA==&#13;&#10;&#13;&#10;"/>
