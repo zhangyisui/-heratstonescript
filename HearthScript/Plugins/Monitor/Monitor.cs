@@ -482,7 +482,7 @@ namespace Monitor
                 RewardTrackManager rewardTrackManager = RewardTrackManager.Get();
                 if (rewardTrackManager != null)
                 {
-                    RewardTrack rewardTrack = rewardTrackManager.GetCurrentRewardTrack(
+                    RewardTrack rewardTrack = rewardTrackManager.GetRewardTrack(
                         Assets.Global.RewardTrackType.GLOBAL);
                     if (rewardTrack != null)
                     {
@@ -520,10 +520,20 @@ namespace Monitor
                 MonitorSettings.Instance.FullTimeNeeded = hour == 0 ? "恭喜满级":
                     ((hour / 24).ToString() + "天" + (hour % 24).ToString() + "小时");
 
-                TimeSpan ts1 = (DateTime.Now - new DateTime(2022, 8, 1, 0, 0, 0, 0));
-                TimeSpan ts2 = (new DateTime(2022, 12, 1, 0, 0, 0, 0) - DateTime.Now);
-                MonitorSettings.Instance.PassportEnd = "8.1-12.1 已过" + ts1.Days.ToString() + "天 还剩" + 
-                    ts2.Days.ToString() + "天";
+                if ((DateTime.Now - new DateTime(2022, 12, 1, 0, 0, 0, 0)).Days > 0)
+                {
+                    TimeSpan ts1 = (DateTime.Now - new DateTime(2022, 12, 1, 0, 0, 0, 0));
+                    TimeSpan ts2 = (new DateTime(2023, 4, 1, 0, 0, 0, 0) - DateTime.Now);
+                    MonitorSettings.Instance.PassportEnd = "12.1-4.1 已过" + ts1.Days.ToString() + "天 还剩" +
+                        ts2.Days.ToString() + "天";
+                }
+                else
+                {
+                    TimeSpan ts1 = (DateTime.Now - new DateTime(2022, 8, 1, 0, 0, 0, 0));
+                    TimeSpan ts2 = (new DateTime(2022, 12, 1, 0, 0, 0, 0) - DateTime.Now);
+                    MonitorSettings.Instance.PassportEnd = "8.1-12.1 已过" + ts1.Days.ToString() + "天 还剩" +
+                        ts2.Days.ToString() + "天";
+                }
 
                 return stats;
             }

@@ -143,6 +143,9 @@ namespace HREngine.Bots
                 case CardDB.cardNameCN.甜水鱼人佣兵:
                     if (murlocCount == 0) pen += bonus;
                     break;
+                case CardDB.cardNameCN.厨师曲奇:
+                    if (murlocCount == 0) pen -= bonus;
+                    break;
                 case CardDB.cardNameCN.暗鳞先知:
                     pen += bonus * 2;
                     break;

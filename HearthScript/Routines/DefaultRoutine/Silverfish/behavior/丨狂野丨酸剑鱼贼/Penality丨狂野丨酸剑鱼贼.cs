@@ -52,7 +52,7 @@ namespace HREngine.Bots
                 if (target.untouchable)
                     return 1000;
                 int pen = -10;
-                if (p.enemyHero.Hp + p.enemyHero.armor <= 15 && p.enemyHero.Hp + p.enemyHero.armor > 0 || p.ownMaxMana > 7 && p.enemyHero.Hp + p.enemyHero.armor > 0)
+                if (p.enemyHero.Hp + p.enemyHero.armor <= 23 && p.enemyHero.Hp + p.enemyHero.armor > 0 || p.ownMaxMana > 7 && p.enemyHero.Hp + p.enemyHero.armor > 0)
                 {
                     if (target.isHero)
                         pen -= 100;
