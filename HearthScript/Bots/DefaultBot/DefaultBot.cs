@@ -1543,12 +1543,12 @@ namespace Triton.Bot.Logic.Bots.DefaultBot
 
 			BnetPresenceMgr bnet = BnetPresenceMgr.Get();
 			BnetBattleTag battleTag = bnet.GetMyPlayer().GetAccount().GetBattleTag();
-			string hashCode = (battleTag.m_name + "#" +
-				battleTag.m_number.ToString()).GetHashCode().ToString();
+			string hashCode = (battleTag.GetName() + "#" +
+				battleTag.GetNumber()).GetHashCode().ToString();
 			JsonSettings.SetMyHashCode(hashCode);
 			DevSettings.Instance.CurrAccountHashCode = hashCode;
 
-			DefaultBotSettings.Instance.ReloadFile();
+            DefaultBotSettings.Instance.ReloadFile();
 
 			if (DefaultBotSettings.Instance.ReleaseLimit)
 			{
