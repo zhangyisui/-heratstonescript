@@ -30,7 +30,7 @@ namespace Stats
         /// <summary> The description of the plugin. </summary>
         public string Description
         {
-            get { return "统计对战十职业的胜场、败场以及胜率。"; }
+            get { return "统计对战十一职业的胜场、败场以及胜率。"; }
         }
 
         /// <summary>The author of the plugin.</summary>
@@ -115,9 +115,7 @@ namespace Stats
                     Wpf.SetupTextBoxBinding(root, "WinsTextBox8", "Wins8", BindingMode.TwoWay, StatsSettings.Instance);
                     Wpf.SetupTextBoxBinding(root, "WinsTextBox9", "Wins9", BindingMode.TwoWay, StatsSettings.Instance);
                     Wpf.SetupTextBoxBinding(root, "WinsTextBox10", "Wins10", BindingMode.TwoWay, StatsSettings.Instance);
-
-
-
+                    Wpf.SetupTextBoxBinding(root, "WinsTextBox11", "Wins11", BindingMode.TwoWay, StatsSettings.Instance);
 
                     if (!Wpf.SetupTextBoxBinding(root, "LossesTextBox", "Losses",
                         BindingMode.TwoWay, StatsSettings.Instance))
@@ -135,6 +133,7 @@ namespace Stats
                     Wpf.SetupTextBoxBinding(root, "LossesTextBox8", "Losses8", BindingMode.TwoWay, StatsSettings.Instance);
                     Wpf.SetupTextBoxBinding(root, "LossesTextBox9", "Losses9", BindingMode.TwoWay, StatsSettings.Instance);
                     Wpf.SetupTextBoxBinding(root, "LossesTextBox10", "Losses10", BindingMode.TwoWay, StatsSettings.Instance);
+                    Wpf.SetupTextBoxBinding(root, "LossesTextBox11", "Losses11", BindingMode.TwoWay, StatsSettings.Instance);
 
                     if (!Wpf.SetupTextBoxBinding(root, "WinrateTextBox", "Winrate",
                         BindingMode.TwoWay, StatsSettings.Instance))
@@ -152,6 +151,7 @@ namespace Stats
                     Wpf.SetupTextBoxBinding(root, "WinrateTextBox8", "Winrate8", BindingMode.TwoWay, StatsSettings.Instance);
                     Wpf.SetupTextBoxBinding(root, "WinrateTextBox9", "Winrate9", BindingMode.TwoWay, StatsSettings.Instance);
                     Wpf.SetupTextBoxBinding(root, "WinrateTextBox10", "Winrate10", BindingMode.TwoWay, StatsSettings.Instance);
+                    Wpf.SetupTextBoxBinding(root, "WinrateTextBox11", "Winrate11", BindingMode.TwoWay, StatsSettings.Instance);
 
                     if (!Wpf.SetupTextBoxBinding(root, "environmentTextBox", "environment",
                          BindingMode.TwoWay, StatsSettings.Instance))
@@ -169,7 +169,7 @@ namespace Stats
                     Wpf.SetupTextBoxBinding(root, "environmentTextBox8", "environment8", BindingMode.TwoWay, StatsSettings.Instance);
                     Wpf.SetupTextBoxBinding(root, "environmentTextBox9", "environment9", BindingMode.TwoWay, StatsSettings.Instance);
                     Wpf.SetupTextBoxBinding(root, "environmentTextBox10", "environment10", BindingMode.TwoWay, StatsSettings.Instance);
-
+                    Wpf.SetupTextBoxBinding(root, "environmentTextBox11", "environment11", BindingMode.TwoWay, StatsSettings.Instance);
 
                     // Your settings event handlers here.
 
@@ -244,6 +244,7 @@ namespace Stats
                             case 4: StatsSettings.Instance.Wins8++; break;//法师
                             case 6: StatsSettings.Instance.Wins9++; break;//牧师
                             case 14: StatsSettings.Instance.Wins10++; break;//恶魔猎手
+                            case 1: StatsSettings.Instance.Wins11++; break;//死亡骑士
                         }
                         UpdateMainGuiStats();
                     }
@@ -263,6 +264,7 @@ namespace Stats
                             case 4: StatsSettings.Instance.Losses8++; break;//法师
                             case 6: StatsSettings.Instance.Losses9++; break;//牧师
                             case 14: StatsSettings.Instance.Losses10++; break;//恶魔猎手
+                            case 1: StatsSettings.Instance.Losses11++; break;//死亡骑士
                         }
                         UpdateMainGuiStats();
                     }
@@ -290,6 +292,7 @@ namespace Stats
             StatsSettings.Instance.Wins8 = 0;
             StatsSettings.Instance.Wins9 = 0;
             StatsSettings.Instance.Wins10 = 0;
+            StatsSettings.Instance.Wins11 = 0;
 
             StatsSettings.Instance.Losses = 0;
             StatsSettings.Instance.Losses1 = 0;
@@ -302,6 +305,7 @@ namespace Stats
             StatsSettings.Instance.Losses8 = 0;
             StatsSettings.Instance.Losses9 = 0;
             StatsSettings.Instance.Losses10 = 0;
+            StatsSettings.Instance.Losses11 = 0;
 
             StatsSettings.Instance.Winrate = "0";
             StatsSettings.Instance.Winrate1 = "0";
@@ -313,9 +317,8 @@ namespace Stats
             StatsSettings.Instance.Winrate7 = "0";
             StatsSettings.Instance.Winrate8 = "0";
             StatsSettings.Instance.Winrate9 = "0";
-            StatsSettings.Instance.Winrate10 = "0"; 
-
-
+            StatsSettings.Instance.Winrate10 = "0";
+            StatsSettings.Instance.Winrate11 = "0";
 
             StatsSettings.Instance.environment = "0";
             StatsSettings.Instance.environment1 = "0";
@@ -328,6 +331,8 @@ namespace Stats
             StatsSettings.Instance.environment8 = "0";
             StatsSettings.Instance.environment9 = "0";
             StatsSettings.Instance.environment10 = "0";
+            StatsSettings.Instance.environment11 = "0";
+
             UpdateMainGuiStats();
         }
 
@@ -370,6 +375,7 @@ namespace Stats
                     StatsSettings.Instance.Winrate8 = WR(StatsSettings.Instance.Wins8, StatsSettings.Instance.Losses8);
                     StatsSettings.Instance.Winrate9 = WR(StatsSettings.Instance.Wins9, StatsSettings.Instance.Losses9);
                     StatsSettings.Instance.Winrate10 = WR(StatsSettings.Instance.Wins10, StatsSettings.Instance.Losses10);
+                    StatsSettings.Instance.Winrate11 = WR(StatsSettings.Instance.Wins11, StatsSettings.Instance.Losses11);
 
                     StatsSettings.Instance.environment = EM(StatsSettings.Instance.Wins, StatsSettings.Instance.Losses, StatsSettings.Instance.Wins, StatsSettings.Instance.Losses);
                     StatsSettings.Instance.environment1 = EM(StatsSettings.Instance.Wins1, StatsSettings.Instance.Losses1, StatsSettings.Instance.Wins, StatsSettings.Instance.Losses);
@@ -382,6 +388,7 @@ namespace Stats
                     StatsSettings.Instance.environment8 = EM(StatsSettings.Instance.Wins8, StatsSettings.Instance.Losses8, StatsSettings.Instance.Wins, StatsSettings.Instance.Losses);
                     StatsSettings.Instance.environment9 = EM(StatsSettings.Instance.Wins9, StatsSettings.Instance.Losses9, StatsSettings.Instance.Wins, StatsSettings.Instance.Losses);
                     StatsSettings.Instance.environment10 = EM(StatsSettings.Instance.Wins10, StatsSettings.Instance.Losses10, StatsSettings.Instance.Wins, StatsSettings.Instance.Losses);
+                    StatsSettings.Instance.environment11 = EM(StatsSettings.Instance.Wins11, StatsSettings.Instance.Losses11, StatsSettings.Instance.Wins, StatsSettings.Instance.Losses);
 
                     //rightControl.Content = string.Format("{0} 胜场/ {1} 总场数(胜率:{2:0.00})", StatsSettings.Instance.Wins, StatsSettings.Instance.Wins + StatsSettings.Instance.Losses, StatsSettings.Instance.Winrate);
                     //Log.InfoFormat("[统计插件] 合计: {0}", rightControl.Content);

@@ -46,6 +46,7 @@ namespace Stats
 		private int _wins8;
 		private int _wins9;
 		private int _wins10;
+        private int _wins11;
         private int _losses;
         private int _losses1;
         private int _losses2;
@@ -56,7 +57,8 @@ namespace Stats
         private int _losses7;
         private int _losses8;
         private int _losses9;
-		private int _losses10;		
+		private int _losses10;
+        private int _losses11;
         private string _winrate;
 		private string _winrate1;
 		private string _winrate2;
@@ -67,7 +69,8 @@ namespace Stats
 		private string _winrate7;
 		private string _winrate8;
 		private string _winrate9;
-		private string _winrate10; 
+		private string _winrate10;
+        private string _winrate11;
         private string _environment;
         private string _environment1;
         private string _environment2;
@@ -79,7 +82,7 @@ namespace Stats
         private string _environment8;
         private string _environment9;
         private string _environment10;
-
+        private string _environment11;
 
         /// <summary>Current stored wins.</summary>
         [DefaultValue(0)]
@@ -236,8 +239,22 @@ namespace Stats
                 _wins10 = value;
                 NotifyPropertyChanged(() => Wins10);
             }
-        }		
-		
+        }
+        [DefaultValue(0)]
+        public int Wins11
+        {
+            get { return _wins11; }
+            set
+            {
+                if (value.Equals(_wins11))
+                {
+                    return;
+                }
+                _wins11 = value;
+                NotifyPropertyChanged(() => Wins11);
+            }
+        }
+
         /// <summary>Current stored losses.</summary>
         [DefaultValue(0)]
         public int Losses
@@ -393,7 +410,21 @@ namespace Stats
                 _losses10 = value;
                 NotifyPropertyChanged(() => Losses10);
             }
-        }		
+        }
+        [DefaultValue(0)]
+        public int Losses11
+        {
+            get { return _losses11; }
+            set
+            {
+                if (value.Equals(_losses11))
+                {
+                    return;
+                }
+                _losses11 = value;
+                NotifyPropertyChanged(() => Losses11);
+            }
+        }
 
         /// <summary>Current  Winrate.</summary>
         [DefaultValue("0")]
@@ -551,6 +582,21 @@ namespace Stats
             }
         }
         [DefaultValue("0")]
+        public string Winrate11
+        {
+            get { return _winrate11; }
+            set
+            {
+                if (value.Equals(_winrate11))
+                {
+                    return;
+                }
+                _winrate11 = value;
+                NotifyPropertyChanged(() => Winrate11);
+            }
+        }
+
+        [DefaultValue("0")]
         public string environment
         {
             get { return _environment; }
@@ -704,6 +750,19 @@ namespace Stats
                 NotifyPropertyChanged(() => environment10);
             }
         }
-
+        [DefaultValue("0")]
+        public string environment11
+        {
+            get { return _environment11; }
+            set
+            {
+                if (value.Equals(_environment11))
+                {
+                    return;
+                }
+                _environment11 = value;
+                NotifyPropertyChanged(() => environment11);
+            }
+        }
     }
 }

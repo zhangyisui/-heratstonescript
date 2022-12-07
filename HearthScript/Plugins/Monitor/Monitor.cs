@@ -520,20 +520,13 @@ namespace Monitor
                 MonitorSettings.Instance.FullTimeNeeded = hour == 0 ? "恭喜满级":
                     ((hour / 24).ToString() + "天" + (hour % 24).ToString() + "小时");
 
-                if ((DateTime.Now - new DateTime(2022, 12, 1, 0, 0, 0, 0)).Days > 0)
-                {
-                    TimeSpan ts1 = (DateTime.Now - new DateTime(2022, 12, 1, 0, 0, 0, 0));
-                    TimeSpan ts2 = (new DateTime(2023, 4, 1, 0, 0, 0, 0) - DateTime.Now);
-                    MonitorSettings.Instance.PassportEnd = "12.1-4.1 已过" + ts1.Days.ToString() + "天 还剩" +
-                        ts2.Days.ToString() + "天";
-                }
-                else
-                {
-                    TimeSpan ts1 = (DateTime.Now - new DateTime(2022, 8, 1, 0, 0, 0, 0));
-                    TimeSpan ts2 = (new DateTime(2022, 12, 1, 0, 0, 0, 0) - DateTime.Now);
-                    MonitorSettings.Instance.PassportEnd = "8.1-12.1 已过" + ts1.Days.ToString() + "天 还剩" +
-                        ts2.Days.ToString() + "天";
-                }
+                TimeSpan ts1 = (DateTime.Now - new DateTime(2022, 12, 7, 0, 0, 0, 0));
+                TimeSpan ts2 = (new DateTime(2023, 4, 7, 0, 0, 0, 0) - DateTime.Now);
+                MonitorSettings.Instance.PassportEnd = "12.7-4.7 已过" +
+                    ts1.Days.ToString() + "天" +
+                    ts1.Hours.ToString() + "小时" +
+                    ts1.Minutes.ToString() + "分 还剩" +
+                    ts2.Days.ToString() + "天";
 
                 return stats;
             }

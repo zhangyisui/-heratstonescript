@@ -31,6 +31,7 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="1" Content="合计"  Margin="3,5,3,1" />
@@ -44,6 +45,7 @@
                     <Label Grid.Row="0" Grid.Column="9" Content="法师"  Margin="3,5,3,1" />
                     <Label Grid.Row="0" Grid.Column="10" Content="牧师"  Margin="3,5,3,1" />
                     <Label Grid.Row="0" Grid.Column="11" Content="恶魔猎手"  Margin="3,5,3,1" />
+                    <Label Grid.Row="0" Grid.Column="12" Content="死亡骑士"  Margin="3,5,3,1" />
 
                     <Label Grid.Row="1" Grid.Column="0" Content="胜场："  Margin="3,5,3,1" />
                     <TextBox Name="WinsTextBox" Grid.Row="1" Grid.Column="1" Margin="3" IsReadOnly="True"/>
@@ -57,7 +59,8 @@
                     <TextBox Name="WinsTextBox8" Grid.Row="1" Grid.Column="9" Margin="3" IsReadOnly="True"/>
                     <TextBox Name="WinsTextBox9" Grid.Row="1" Grid.Column="10" Margin="3" IsReadOnly="True"/>
                     <TextBox Name="WinsTextBox10" Grid.Row="1" Grid.Column="11" Margin="3" IsReadOnly="True"/>
-
+                    <TextBox Name="WinsTextBox11" Grid.Row="1" Grid.Column="12" Margin="3" IsReadOnly="True"/>
+                    
                     <Label Grid.Row="2" Grid.Column="0" Content="败场："  Margin="3,5,3,1" />
                     <TextBox Name="LossesTextBox" Grid.Row="2" Grid.Column="1" Margin="3" IsReadOnly="True"/>
                     <TextBox Name="LossesTextBox1" Grid.Row="2" Grid.Column="2" Margin="3" IsReadOnly="True"/>
@@ -70,7 +73,8 @@
                     <TextBox Name="LossesTextBox8" Grid.Row="2" Grid.Column="9" Margin="3" IsReadOnly="True"/>
                     <TextBox Name="LossesTextBox9" Grid.Row="2" Grid.Column="10" Margin="3" IsReadOnly="True"/>
                     <TextBox Name="LossesTextBox10" Grid.Row="2" Grid.Column="11" Margin="3" IsReadOnly="True"/>
-
+                    <TextBox Name="LossesTextBox11" Grid.Row="2" Grid.Column="12" Margin="3" IsReadOnly="True"/>
+                    
                     <Label Grid.Row="3" Grid.Column="0" Content="胜率："  Margin="3,5,3,1" />
                     <TextBox Name="WinrateTextBox" Grid.Row="3" Grid.Column="1" Margin="3" IsReadOnly="True"/>
                     <TextBox Name="WinrateTextBox1" Grid.Row="3" Grid.Column="2" Margin="3" IsReadOnly="True"/>
@@ -83,6 +87,7 @@
                     <TextBox Name="WinrateTextBox8" Grid.Row="3" Grid.Column="9" Margin="3" IsReadOnly="True"/>
                     <TextBox Name="WinrateTextBox9" Grid.Row="3" Grid.Column="10" Margin="3" IsReadOnly="True"/>
                     <TextBox Name="WinrateTextBox10" Grid.Row="3" Grid.Column="11" Margin="3" IsReadOnly="True"/>
+                    <TextBox Name="WinrateTextBox11" Grid.Row="3" Grid.Column="12" Margin="3" IsReadOnly="True"/>
 
                     <Label Grid.Row="4" Grid.Column="0" Content="环境："  Margin="3,5,3,1" />
                     <TextBox Name="environmentTextBox" Grid.Row="4" Grid.Column="1" Margin="3" IsReadOnly="True" />
@@ -96,6 +101,7 @@
                     <TextBox Name="environmentTextBox8" Grid.Row="4" Grid.Column="9" Margin="3" IsReadOnly="True"/>
                     <TextBox Name="environmentTextBox9" Grid.Row="4" Grid.Column="10" Margin="3" IsReadOnly="True"/>
                     <TextBox Name="environmentTextBox10" Grid.Row="4" Grid.Column="11" Margin="3" IsReadOnly="True"/>
+                    <TextBox Name="environmentTextBox11" Grid.Row="4" Grid.Column="12" Margin="3" IsReadOnly="True"/>
 
                     <Button Content="全部重置" Name="ResetButton" Grid.Row="5" Grid.Column="0" Margin="3"/>
                 </Grid>
