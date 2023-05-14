@@ -52,7 +52,19 @@ namespace Triton.Bot.Logic.Bots.DefaultBot
 				ConstructedCustomDeck = CommandLine.Arguments.Single("deck");
 				ilog_0.ErrorFormat("[中控设置] 对战卡组名称 = {0}.", ConstructedCustomDeck);
 			}
-		}
+            if (CommandLine.Arguments.Exists("width"))
+            {
+				ReleaseLimit = true;
+                ReleaseLimitW = int.Parse(CommandLine.Arguments.Single("width"));
+                ilog_0.ErrorFormat("[中控设置] 炉石窗口宽度 = {0}.", ReleaseLimitW);
+            }
+            if (CommandLine.Arguments.Exists("height"))
+            {
+                ReleaseLimit = true;
+                ReleaseLimitH = int.Parse(CommandLine.Arguments.Single("height"));
+                ilog_0.ErrorFormat("[中控设置] 炉石窗口高度 = {0}.", ReleaseLimitH);
+            }
+        }
 
 		//下拉框数据
 		private ObservableCollection<VisualsFormatType> observableCollection_3;
@@ -168,7 +180,10 @@ namespace Triton.Bot.Logic.Bots.DefaultBot
 					int_w = value;
 					if (int_w < 120) int_w = 120;
 					if (int_w > 1920) int_w = 1920;
-					ReleaseLimitH = int_w / 4 * 3;
+					if (ReleaseLimitH!=(int_w / 4 * 3))
+					{
+                        ReleaseLimitH = int_w / 4 * 3;
+                    }
 					NotifyPropertyChanged(() => ReleaseLimitW);
 				}
 				ilog_0.InfoFormat("[天梯脚本设置] 炉石窗口宽度 = {0}.", int_w);
